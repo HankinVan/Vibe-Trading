@@ -3,6 +3,8 @@ import { createBrowserRouter } from "react-router";
 import { Layout } from "@/components/layout/Layout";
 
 const Home = lazy(() => import("@/pages/Home").then((m) => ({ default: m.Home })));
+const Overview = lazy(() => import("@/pages/Overview").then((m) => ({ default: m.Overview })));
+const HumanoidRobot = lazy(() => import("@/pages/HumanoidRobot").then((m) => ({ default: m.HumanoidRobot })));
 const Agent = lazy(() => import("@/pages/Agent").then((m) => ({ default: m.Agent })));
 const RunDetail = lazy(() =>
   import("@/pages/RunDetail").then((m) => ({ default: m.RunDetail })),
@@ -52,7 +54,9 @@ export const router = createBrowserRouter([
   {
     element: <Layout />,
     children: [
-      { path: "/", element: wrap(Agent) },
+      { path: "/", element: wrap(Overview) },
+      { path: "/overview", element: wrap(Overview) },
+      { path: "/humanoid", element: wrap(HumanoidRobot) },
       { path: "/about", element: wrap(Home) },
       { path: "/agent", element: wrap(Agent) },
       { path: "/runtime", element: wrap(Runtime) },

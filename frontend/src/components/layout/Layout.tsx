@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useEffect, useRef, useState } from "react";
 import { Link, Outlet, useLocation, useSearchParams } from "react-router";
-import { Activity, BarChart3, Bot, CalendarClock, CandlestickChart, Check, ChevronDown, FileText, Languages, Moon, Sun, Plus, Trash2, Pencil, MessageSquare, ChevronsLeft, ChevronsRight, Settings, Layers, Loader2 } from "lucide-react";
+import { Activity, BarChart3, Bot, CalendarClock, CandlestickChart, Check, ChevronDown, FileText, Languages, LayoutDashboard, Moon, Sun, Plus, Trash2, Pencil, MessageSquare, ChevronsLeft, ChevronsRight, Settings, Layers, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useDarkMode } from "@/hooks/useDarkMode";
 import { api, type SessionItem } from "@/lib/api";
@@ -20,7 +20,9 @@ export function Layout() {
   // "/" is the product (chat); marketing moved to /about. The Agent entry
   // matches both "/" and legacy "/agent" deep links.
   const NAV = [
-    { to: "/", icon: Bot, label: t('layout.agent') },
+    { to: "/overview", icon: LayoutDashboard, label: t('layout.overview') },
+    { to: "/humanoid", icon: Bot, label: t('layout.humanoid') },
+    { to: "/agent", icon: MessageSquare, label: t('layout.agent') },
     { to: "/runtime", icon: Activity, label: t('layout.runtime') },
     { to: "/scheduled", icon: CalendarClock, label: t('layout.scheduled') },
     { to: "/reports", icon: FileText, label: t('layout.reports') },
@@ -115,12 +117,12 @@ export function Layout() {
         <div className={cn("border-b border-border/60", collapsed ? "p-2 flex justify-center" : "p-4 max-md:p-2 max-md:flex max-md:justify-center")}>
           <Link
             to="/"
-            aria-label="Vibe-Trading"
+            aria-label="Hankin的看板"
             className={cn("flex items-center", collapsed ? "justify-center" : "gap-2 max-md:justify-center")}
           >
             <BrandMark className="h-6 w-6 shrink-0" />
             {!collapsed && (
-              <span className="text-[15px] font-semibold tracking-tight max-md:hidden">Vibe-Trading</span>
+              <span className="text-[15px] font-semibold tracking-tight max-md:hidden">Hankin的看板</span>
             )}
           </Link>
         </div>

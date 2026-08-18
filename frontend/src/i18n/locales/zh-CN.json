@@ -3,6 +3,8 @@
     "version": "v0.1.13"
   },
   "layout": {
+    "overview": "总览",
+    "humanoid": "人形机器人",
     "home": "首页",
     "agent": "智能体",
     "runtime": "交易监控",
@@ -1089,6 +1091,33 @@
     "fullReport": "完整报告 →",
     "pineScript": "Pine Script",
     "shadowReport": "影子报告"
+  },
+  "overview": {
+    "title": "总览",
+    "refresh": "刷新",
+    "refreshing": "刷新中...",
+    "aShareIndex": "A股指数",
+    "usIndex": "美股指数",
+    "ssei": "上证指数",
+    "csi300": "沪深300",
+    "chiNext": "创业板指",
+    "nasdaq": "纳斯达克",
+    "sp500": "标普500",
+    "dowJones": "道琼斯",
+    "aWatchlist": "A股自选",
+    "usWatchlist": "美股自选",
+    "add": "添加",
+    "addStock": "添加自选",
+    "searchPlaceholder": "输入代码或名称搜索...",
+    "noResults": "暂无匹配结果",
+    "remove": "移除",
+    "emptyWatchlist": "暂无自选股，点击添加",
+    "loading": "加载中...",
+    "loadError": "行情加载失败"
+  },
+  "humanoid": {
+    "title": "人形机器人",
+    "placeholder": "人形机器人页面建设中..."
   },
   "home": {
     "title": "AI 驱动的量化策略研究",

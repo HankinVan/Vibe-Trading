@@ -35,6 +35,33 @@ export function isAuthRequiredError(error: unknown): boolean {
   return error instanceof ApiError && (error.status === 401 || error.status === 403);
 }
 
+export interface QuoteItem {
+  symbol: string;
+  name?: string | null;
+  price?: number | null;
+  prev_close?: number | null;
+  change?: number | null;
+  change_percent?: number | null;
+}
+
+export interface QuoteResponse {
+  quotes: Record<string, QuoteItem>;
+  failed: string[];
+}
+
+export interface SearchCandidate {
+  symbol: string;
+  name: string;
+  market: string;
+  type: string;
+}
+
+export interface SearchResponse {
+  query: string;
+  count: number;
+  candidates: SearchCandidate[];
+}
+
 export interface CorrelationResponse {
   labels: string[];
   matrix: number[][];
@@ -272,6 +299,19 @@ export const api = {
     q.set("ticker", ticker);
     if (expiration !== undefined) q.set("expiration", String(expiration));
     return request<OptionsChainResponse>(`/options/chain?${q.toString()}`);
+  },
+
+  // Market data — quote snapshots + symbol search
+  getQuotes: (symbols: string[]) => {
+    const q = new URLSearchParams();
+    q.set("symbols", symbols.join(","));
+    return request<QuoteResponse>(`/api/quote?${q.toString()}`);
+  },
+  searchSymbol: (query: string, limit?: number) => {
+    const q = new URLSearchParams();
+    q.set("query", query);
+    if (limit !== undefined) q.set("limit", String(limit));
+    return request<SearchResponse>(`/api/search-symbol?${q.toString()}`);
   },
 
   // Connector runtime channel — privileged surface actions (NOT agent tools).

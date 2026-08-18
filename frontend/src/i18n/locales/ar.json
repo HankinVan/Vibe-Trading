@@ -3,6 +3,8 @@
     "version": "v0.1.13"
   },
   "layout": {
+    "overview": "Overview",
+    "humanoid": "Humanoid Robot",
     "home": "الرئيسية",
     "agent": "الوكيل",
     "runtime": "مراقبة التداول",
@@ -1089,6 +1091,33 @@
     "fullReport": "التقرير الكامل →",
     "pineScript": "Pine Script",
     "shadowReport": "تقرير الظلّ"
+  },
+  "overview": {
+    "title": "Overview",
+    "refresh": "Refresh",
+    "refreshing": "Refreshing...",
+    "aShareIndex": "A-Share Indices",
+    "usIndex": "US Indices",
+    "ssei": "Shanghai Composite",
+    "csi300": "CSI 300",
+    "chiNext": "ChiNext",
+    "nasdaq": "Nasdaq",
+    "sp500": "S&P 500",
+    "dowJones": "Dow Jones",
+    "aWatchlist": "A-Share Watchlist",
+    "usWatchlist": "US Watchlist",
+    "add": "Add",
+    "addStock": "Add to Watchlist",
+    "searchPlaceholder": "Search symbol or name...",
+    "noResults": "No results found",
+    "remove": "Remove",
+    "emptyWatchlist": "No watchlist items yet. Click Add to get started.",
+    "loading": "Loading...",
+    "loadError": "Failed to load quotes"
+  },
+  "humanoid": {
+    "title": "Humanoid Robot",
+    "placeholder": "Humanoid robot page under construction..."
   },
   "home": {
     "title": "بحث استراتيجيات الكمّ مدعوم بالذكاء الاصطناعي",
